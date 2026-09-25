@@ -86,6 +86,12 @@ namespace pract8_trpo.Pages
         {
             if (currentDoctor.ID != null)
             {
+                if (HasValidationErrors())
+                {
+                    MessageBox.Show("Исправьте ошибки валидации");
+                    return;
+                }
+
                 if (addedPatient.Name != null &&
                     addedPatient.LastName != null &&
                     addedPatient.MiddleName != null &&
@@ -114,6 +120,15 @@ namespace pract8_trpo.Pages
             {
                 MessageBox.Show("Врач должен войти");
             }
+        }
+
+        private bool HasValidationErrors()
+        {
+            return Validation.GetHasError(TextBoxName) ||
+                   Validation.GetHasError(TextBoxLastName) ||
+                   Validation.GetHasError(TextBoxMiddleName) ||
+                   Validation.GetHasError(TextBoxPhone) ||
+                   Validation.GetHasError(BirthdayPicker);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

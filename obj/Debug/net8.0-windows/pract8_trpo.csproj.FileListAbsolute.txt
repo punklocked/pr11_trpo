@@ -166,7 +166,6 @@ C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\Pages\LoginP
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\Pages\MainForm.g.cs
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\Pages\RegisterPage.g.cs
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\App.g.cs
-C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\pract8_trpo_Content.g.cs
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\pract8_trpo_MarkupCompile.cache
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\pract8_trpo_MarkupCompile.lref
@@ -189,3 +188,4 @@ C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\refint\pract
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\pract8_trpo.pdb
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\pract8_trpo.genruntimeconfig.cache
 C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\ref\pract8_trpo.dll
+C:\Users\Natvoril\Desktop\pr11_trpo-master\obj\Debug\net8.0-windows\pract8_trpo.sourcelink.json

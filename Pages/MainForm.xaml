@@ -5,9 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:pract8_trpo.Pages"
       xmlns:validators="clr-namespace:pract8_trpo.Data.Validators"
+      xmlns:converters="clr-namespace:pract8_trpo.Data.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainForm">
+
+    <Page.Resources>
+        <converters:PhoneConverter x:Key="PhoneConverter"/>
+    </Page.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -83,7 +88,7 @@
                             </StackPanel>
                             <StackPanel Style="{StaticResource HorizontalPanel}">
                                 <TextBlock Text="Номер телефона: "></TextBlock>
-                                <TextBlock Text="{Binding PhoneNumber, StringFormat={}{0:# (###) ### ## ##}}"/>
+                                <TextBlock Text="{Binding PhoneNumber, Converter={StaticResource PhoneConverter}}"/>
                             </StackPanel>
                             <StackPanel Style="{StaticResource HorizontalPanel}">
                                 <TextBlock Text="Диагноз: "></TextBlock>

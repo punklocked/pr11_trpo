@@ -13,19 +13,20 @@ namespace pract8_trpo.Data.Validators
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
 
-            var inputString = value.ToString();
-
             if (value == null)
             {
                 return new ValidationResult(false, "Значение не может быть пустым");
             }
+
+            var inputString = value.ToString();
+
             if (inputString.Length < 8)
             {
                 return new ValidationResult(false, $"Пароль должен содержать минимум 8 символов");
             }
-            if (inputString.Length > 255)
+            if (inputString.Length > 50)
             {
-                return new ValidationResult(false, $"Пароль не должен содержать больше чем 255 символов");
+                return new ValidationResult(false, "Пароль не должен содержать больше чем 50 символов");
             }
 
             return ValidationResult.ValidResult;

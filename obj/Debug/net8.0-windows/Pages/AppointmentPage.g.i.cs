@@ -79,7 +79,7 @@ namespace pract8_trpo.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/pract8_trpo;V1.0.0.0;component/pages/appointmentpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/pract8_trpo;component/pages/appointmentpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\AppointmentPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

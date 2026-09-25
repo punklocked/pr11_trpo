@@ -13,12 +13,12 @@ namespace pract8_trpo.Data.Validators
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
 
-            var input = Convert.ToDateTime(value);
-
             if (value == null)
             {
                 return new ValidationResult(false, "Значение не может быть пустым");
             }
+
+            var input = Convert.ToDateTime(value);
             if (input >= DateTime.Now)
             {
                 return new ValidationResult(false, "День рождения не может быть больше сегодняшнего");

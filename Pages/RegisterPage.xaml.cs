@@ -66,6 +66,12 @@ namespace pract8_trpo.Pages
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            if (HasValidationErrors())
+            {
+                MessageBox.Show("Исправьте ошибки валидации");
+                return;
+            }
+
             if (registeredDoctor.Name != null &&
                 registeredDoctor.LastName != null &&
                 registeredDoctor.MiddleName != null &&
@@ -94,6 +100,16 @@ namespace pract8_trpo.Pages
             {
                 MessageBox.Show("Все поля должны быть заполнены");
             }
+        }
+
+        private bool HasValidationErrors()
+        {
+            return Validation.GetHasError(TextBoxName) ||
+                   Validation.GetHasError(TextBoxLastName) ||
+                   Validation.GetHasError(TextBoxMiddleName) ||
+                   Validation.GetHasError(TextBoxSpecialization) ||
+                   Validation.GetHasError(TextBoxPassword) ||
+                   Validation.GetHasError(TextBoxRepeatPassword);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

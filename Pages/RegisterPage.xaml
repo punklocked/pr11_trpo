@@ -113,7 +113,22 @@
         </StackPanel>
 
         <Label Content="Подтвердите пароль"/>
-        <TextBox Text="{Binding RepeatPassword}"/>
+        <TextBox x:Name="TextBoxRepeatPassword">
+            <TextBox.Text>
+                <Binding Path="RepeatPassword" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validators:PassValidation/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ItemsControl Style="{StaticResource ErrorText}" ItemsSource="{Binding ElementName=TextBoxRepeatPassword, Path=(Validation.Errors)}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding ErrorContent}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
         <Button Style="{DynamicResource AddButton}" Content="Зарегистрироваться" Click="RegisterButton_Click"/>
         <Button Content="Войти" Click="BackButton_Click"/>
     </StackPanel>
