@@ -1,0 +1,56 @@
+﻿<Page x:Class="pract8_trpo.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pract8_trpo.Pages"
+      xmlns:validators="clr-namespace:pract8_trpo.Data.Validators"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="LoginPage">
+
+    <StackPanel x:Name="LoginForm" Style="{StaticResource VerticalPanel}">
+        <StackPanel>
+            <Label Content="ID"/>
+            <TextBox x:Name="IDTextBox">
+                <TextBox.Text>
+                    <Binding Path="ID" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:IDDvalidation/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl Style="{StaticResource ErrorText}" ItemsSource="{Binding ElementName=IDTextBox, Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <StackPanel>
+            <Label Content="Пароль"/>
+            <TextBox x:Name="TextBoxPassword">
+                <TextBox.Text>
+                    <Binding Path="Password" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <validators:PassValidation/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <ItemsControl Style="{StaticResource ErrorText}" ItemsSource="{Binding ElementName=TextBoxPassword, Path=(Validation.Errors)}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding ErrorContent}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <Button Name="Login" Content="Войти" Click="LoginButton_Click"/>
+        <Button Content="Зарегистрироваться" Click="RegisterButton_Click"/>
+    </StackPanel>
+</Page>
